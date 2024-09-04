@@ -71,10 +71,10 @@
             @Html.DisplayFor(model => model.TipoPessoa)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CPFCNPJ)
+            @Html.DisplayNameFor(model => model.CpfCnpj)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CPFCNPJ)
+            @Html.DisplayFor(model => model.CpfCnpj)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DataCadastro)
@@ -100,9 +100,15 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Observacao)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.ClientesId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

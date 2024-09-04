@@ -6,7 +6,6 @@ namespace AppFluxoDeCaixa.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -16,7 +15,8 @@ namespace AppFluxoDeCaixa.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<Clientes>().ToTable("3689Clientes");
+            builder.Entity<Clientes>().ToTable("1234Clientes");
         }
+
     }
 }

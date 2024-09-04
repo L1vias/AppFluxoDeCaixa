@@ -34,7 +34,7 @@ namespace AppFluxoDeCaixa.Controllers
             }
 
             var clientes = await _context.Clientes
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ClientesId == id);
             if (clientes == null)
             {
                 return NotFound();
@@ -54,11 +54,11 @@ namespace AppFluxoDeCaixa.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClientesNome,Logradouro,Cidade,UF,CEP,Bairro,Email,Telefone,Celular,TipoPessoa,CPFCNPJ,DataCadastro,DataNascFundacao,CadastroAtivo,Observacao")] Clientes clientes)
+        public async Task<IActionResult> Create([Bind("ClientesId,ClientesNome,Logradouro,Cidade,UF,CEP,Bairro,Email,Telefone,Celular,TipoPessoa,CpfCnpj,DataCadastro,DataNascFundacao,CadastroAtivo,Observacao,Numero")] Clientes clientes)
         {
             if (ModelState.IsValid)
             {
-                clientes.Id = Guid.NewGuid();
+                clientes.ClientesId = Guid.NewGuid();
                 _context.Add(clientes);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,9 +87,9 @@ namespace AppFluxoDeCaixa.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,ClientesNome,Logradouro,Cidade,UF,CEP,Bairro,Email,Telefone,Celular,TipoPessoa,CPFCNPJ,DataCadastro,DataNascFundacao,CadastroAtivo,Observacao")] Clientes clientes)
+        public async Task<IActionResult> Edit(Guid id, [Bind("ClientesId,ClientesNome,Logradouro,Cidade,UF,CEP,Bairro,Email,Telefone,Celular,TipoPessoa,CpfCnpj,DataCadastro,DataNascFundacao,CadastroAtivo,Observacao,Numero")] Clientes clientes)
         {
-            if (id != clientes.Id)
+            if (id != clientes.ClientesId)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace AppFluxoDeCaixa.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientesExists(clientes.Id))
+                    if (!ClientesExists(clientes.ClientesId))
                     {
                         return NotFound();
                     }
@@ -126,7 +126,7 @@ namespace AppFluxoDeCaixa.Controllers
             }
 
             var clientes = await _context.Clientes
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ClientesId == id);
             if (clientes == null)
             {
                 return NotFound();
@@ -152,7 +152,7 @@ namespace AppFluxoDeCaixa.Controllers
 
         private bool ClientesExists(Guid id)
         {
-            return _context.Clientes.Any(e => e.Id == id);
+            return _context.Clientes.Any(e => e.ClientesId == id);
         }
     }
 }
