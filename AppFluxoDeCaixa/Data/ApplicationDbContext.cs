@@ -15,7 +15,7 @@ namespace AppFluxoDeCaixa.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<Clientes>().ToTable("1234Clientes");
+            builder.Entity<Clientes>().ToTable("Clientes");
         }
 
     }
