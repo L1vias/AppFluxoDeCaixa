@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppFluxoDeCaixa.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240904114157_Clientes")]
-    partial class Clientes
+    [Migration("20240904115139_ClientesNew")]
+    partial class ClientesNew
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -97,7 +97,7 @@ namespace AppFluxoDeCaixa.Migrations
 
                     b.HasKey("ClientesId");
 
-                    b.ToTable("1234Clientes", (string)null);
+                    b.ToTable("Clientes", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

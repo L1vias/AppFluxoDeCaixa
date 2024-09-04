@@ -94,7 +94,7 @@ namespace AppFluxoDeCaixa.Migrations
 
                     b.HasKey("ClientesId");
 
-                    b.ToTable("1234Clientes", (string)null);
+                    b.ToTable("Clientes", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
